@@ -12,6 +12,7 @@ import { Button } from "tea-component/lib/button";
 import { PersonForm } from './PersonForm'
 
 const App = () => {
+  const [inForm,setInForm] = useState(false)
   const [person,setPerson] = useState<Person | null>(null)
 
   const columns = Person.getColumns<Person>();
@@ -22,10 +23,20 @@ const App = () => {
   
   return (
     <div style={{padding:10}}>
-      <Button type="primary" >Add</Button>
-      <div style={{padding: 20, marginBottom: 40}}>
-        <PersonForm />
-      </div>
+    {
+      !inForm ? (
+        <Button type="primary" onClick={() => {
+          setInForm(true)
+        }}>Add</Button>
+      ): (
+        <div style={{padding: 20, marginBottom: 40}}>
+          <PersonForm onClose={() => {
+            setInForm(false)
+          }}/>
+        </div>
+      )
+    }
+     
       <Table<Person> columns={columns} getListFun={getListFun}/>
     </div>
     )

@@ -5,12 +5,14 @@
   "dependencies": {
     "@types/react": "16.9.46",
     "@types/react-dom": "16.9.8",
+    "@types/yup": "^0.29.6",
     "formik": "^2.1.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "reflect-metadata": "^0.1.13",
     "tea-component": "2.3.7",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "react-scripts-ts start",
